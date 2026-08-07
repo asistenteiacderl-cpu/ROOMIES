@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOMIES - Simulador de Afinidad | Encuentra tu Roomie ideal</title>
+    <meta name="description" content="Simulador de compatibilidad en vivo de ROOMIES. Tweak-ea tus hábitos de orden, nivel de ruido y presupuesto para ver coincidencia con estudiantes de Comayagua.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Decorative Glowing Blobs -->
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+    <div class="glow-blob blob-3"></div>
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="header-glass">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-people-roof"></i></span>
+                <span class="logo-text">ROOM<span class="highlight">IES</span></span>
+            </a>
+            <nav id="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="beneficios.html">¿Por qué Roomies?</a></li>
+                    <li><a href="simulador.html" class="active">Simulador</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="contacto.html" class="btn btn-primary" id="nav-cta-btn">Buscar Roomie</a>
+                <button class="mobile-toggle" aria-label="Abrir menú de navegación" id="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header Banner -->
+        <section class="section-padding" style="padding-bottom: 20px;">
+            <div class="container text-center">
+                <span class="badge-accent"><i class="fa-solid fa-bolt"></i> Algoritmo Inteligente</span>
+                <h1 style="font-family: var(--font-heading); font-size: 3rem; font-weight: 800; margin-bottom: 16px;">Simulador de <span class="gradient-text">Compatibilidad</span></h1>
+                <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto;">Ajusta tus parámetros y mira cómo responde nuestro algoritmo. Conecta con compañeros de UNAH-CURC, UJCV y UPNFM en tiempo real.</p>
+            </div>
+        </section>
+
+        <!-- Interactive Match Simulator -->
+        <section id="simulador" class="section-padding" style="padding-top: 20px;">
+            <div class="container">
+                <div class="simulator-wrapper">
+                    <!-- Left Panel: Controls -->
+                    <div class="card-glass sim-controls">
+                        <h3><i class="fa-solid fa-sliders"></i> Tus Hábitos y Criterios</h3>
+                        
+                        <div class="sim-control-group">
+                            <div class="control-label">
+                                <span><i class="fa-solid fa-broom"></i> Nivel de Limpieza</span>
+                                <span class="val-badge" id="lbl-limpieza">Minucioso</span>
+                            </div>
+                            <input type="range" id="rng-limpieza" min="1" max="3" value="3" class="slider">
+                            <div class="slider-ticks">
+                                <span>Básico</span>
+                                <span>Ordenado</span>
+                                <span>Minucioso</span>
+                            </div>
+                        </div>
+
+                        <div class="sim-control-group">
+                            <div class="control-label">
+                                <span><i class="fa-solid fa-volume-high"></i> Ruido / Visitas</span>
+                                <span class="val-badge" id="lbl-ruido">Moderado</span>
+                            </div>
+                            <input type="range" id="rng-ruido" min="1" max="3" value="2" class="slider">
+                            <div class="slider-ticks">
+                                <span>Silencioso</span>
+                                <span>Moderado</span>
+                                <span>Festivo</span>
+                            </div>
+                        </div>
+
+                        <div class="sim-control-group">
+                            <div class="control-label">
+                                <span><i class="fa-solid fa-clock"></i> Horario Activo</span>
+                                <span class="val-badge" id="lbl-horario">Diurno</span>
+                            </div>
+                            <div class="toggle-btn-group" id="btn-group-horario">
+                                <button class="toggle-btn active" data-val="diurno">Diurno</button>
+                                <button class="toggle-btn" data-val="nocturno">Nocturno</button>
+                            </div>
+                        </div>
+
+                        <div class="sim-control-group">
+                            <div class="control-label">
+                                <span><i class="fa-solid fa-paw"></i> ¿Aceptas Mascotas?</span>
+                                <span class="val-badge" id="lbl-mascota">Sí</span>
+                            </div>
+                            <div class="toggle-btn-group" id="btn-group-mascota">
+                                <button class="toggle-btn active" data-val="si">Sí</button>
+                                <button class="toggle-btn" data-val="no">No</button>
+                            </div>
+                        </div>
+
+                        <div class="sim-control-group">
+                            <div class="control-label">
+                                <span><i class="fa-solid fa-wallet"></i> Presupuesto de Alquiler</span>
+                                <span class="val-badge" id="lbl-presupuesto">L 3,000 / mes</span>
+                            </div>
+                            <input type="range" id="rng-presupuesto" min="1500" max="6000" step="500" value="3000" class="slider">
+                            <div class="slider-ticks">
+                                <span>L 1,500</span>
+                                <span>L 3,500</span>
+                                <span>L 6,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel: Match Results -->
+                    <div class="sim-results">
+                        <div class="results-header">
+                            <h3><i class="fa-solid fa-bolt"></i> Coincidencias Recomendadas</h3>
+                            <span class="results-count" id="matches-count">3 Compañeros Encontrados</span>
+                        </div>
+
+                        <div class="matches-list" id="matches-container">
+                            <!-- Match Card Template (Will be generated dynamically by JS) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section-padding text-center">
+            <div class="container">
+                <div class="card-glass" style="max-width: 700px; margin: 0 auto; padding: 50px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 16px;">¿Encontraste a alguien compatible?</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 28px;">Regístrate de manera gratuita para conectarte formalmente con tu compañero ideal y comenzar el proceso de validación.</p>
+                    <a href="contacto.html" class="btn btn-primary btn-lg">Pre-registrarse Gratis <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-people-roof"></i></span>
+                    <span class="logo-text">ROOM<span class="highlight">IES</span></span>
+                </a>
+                <p>Plataforma para la conexión segura y afinidad de convivencia entre estudiantes universitarios.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div>
+                    <h5>Navegación</h5>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="beneficios.html">Beneficios</a></li>
+                        <li><a href="simulador.html">Simulador</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Operaciones</h5>
+                    <ul>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Privacidad de Datos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 ROOMIES. Todos los derechos reservados. Desarrollado por Ruth Fernández & Ana Hernández.</p>
+                <div class="aecid-badge">
+                    <i class="fa-solid fa-handshake-angle"></i> Elaborado como parte del Proyecto de Emprendimiento <strong>EMPRENDE CITE</strong> (Comayagua), financiado por la <strong>Agencia Española de Cooperación Internacional para el Desarrollo (AECID)</strong>.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script file -->
+    <script src="app.js"></script>
+</body>
+</html>

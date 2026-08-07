@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOMIES - Inicio | Conecta con tu compañero de vivienda ideal</title>
+    <meta name="description" content="ROOMIES es la plataforma tecnológica que conecta a estudiantes universitarios con compañeros de vivienda compatibles, de forma segura, organizada y verificada en Comayagua.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Decorative Glowing Blobs -->
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+    <div class="glow-blob blob-3"></div>
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="header-glass">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-people-roof"></i></span>
+                <span class="logo-text">ROOM<span class="highlight">IES</span></span>
+            </a>
+            <nav id="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="beneficios.html">¿Por qué Roomies?</a></li>
+                    <li><a href="simulador.html">Simulador</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="contacto.html" class="btn btn-primary" id="nav-cta-btn">Buscar Roomie</a>
+                <button class="mobile-toggle" aria-label="Abrir menú de navegación" id="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge-accent"><i class="fa-solid fa-rocket"></i> Emprendimiento de Base Tecnológica</span>
+                    <h1>Conecta con tu roomie ideal de forma <span class="gradient-text">segura y sin estrés</span></h1>
+                    <p class="hero-subtitle">La primera plataforma diseñada para estudiantes universitarios y recomendada por familias en Comayagua. Filtros de afinidad, perfiles verificados y convivencia garantizada.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="simulador.html" class="btn btn-primary btn-lg">Probar Simulador <i class="fa-solid fa-play"></i></a>
+                        <a href="beneficios.html" class="btn btn-secondary btn-lg">Saber Más</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-num" id="stat-match">98%</span>
+                            <span class="stat-label">Compatibilidad</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" id="stat-security">100%</span>
+                            <span class="stat-label">Perfiles Verificados</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" id="stat-cities">Comayagua</span>
+                            <span class="stat-label">Sede Oficial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-card-container">
+                    <div class="card-glass hero-widget">
+                        <h3><i class="fa-solid fa-magnifying-glass"></i> Búsqueda Rápida</h3>
+                        <div class="widget-form-group">
+                            <label for="widget-univ">Universidad</label>
+                            <select id="widget-univ">
+                                <option value="unah">UNAH-CURC</option>
+                                <option value="ujcv">UJCV (José Cecilio del Valle)</option>
+                                <option value="upnfm">UPNFM Comayagua</option>
+                                <option value="otra">Otra Universidad</option>
+                            </select>
+                        </div>
+                        <div class="widget-form-group">
+                            <label for="widget-budget">Presupuesto mensual máx.</label>
+                            <div class="budget-input-wrapper">
+                                <span>L</span>
+                                <input type="number" id="widget-budget" value="3500" min="1000" step="100">
+                            </div>
+                        </div>
+                        <div class="widget-form-group">
+                            <label>Hábito Prioritario</label>
+                            <div class="habit-pills">
+                                <button class="pill active" data-val="estudio"><i class="fa-solid fa-book"></i> Estudio</button>
+                                <button class="pill" data-val="limpieza"><i class="fa-solid fa-broom"></i> Limpieza</button>
+                                <button class="pill" data-val="mascotas"><i class="fa-solid fa-paw"></i> Mascotas</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block" id="widget-search-btn">Buscar Coincidencias</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Overview Grid -->
+        <section class="section-padding section-dark-bg">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Explora la Plataforma</span>
+                    <h2>Diseñada para la Vida Universitaria</h2>
+                    <p class="section-desc">Entendemos los retos de mudarse a una nueva ciudad. Explora las secciones clave de nuestro proyecto tecnológico.</p>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Card 1: Beneficios -->
+                    <div class="card-glass text-center" style="padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div class="info-icon" style="margin: 0 auto 20px auto; width: 60px; height: 60px; font-size: 1.6rem;"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 12px;">¿Por qué ROOMIES?</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Compara la búsqueda tradicional e insegura con nuestro sistema verificado que brinda paz mental a estudiantes y padres.</p>
+                        </div>
+                        <a href="beneficios.html" class="btn btn-secondary">Ver Beneficios <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Card 2: Simulador -->
+                    <div class="card-glass text-center" style="padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div class="info-icon" style="margin: 0 auto 20px auto; width: 60px; height: 60px; font-size: 1.6rem; background: rgba(231, 111, 81, 0.1); color: var(--color-primary);"><i class="fa-solid fa-sliders"></i></div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 12px;">Simulador de Afinidad</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Prueba el algoritmo interactivo. Filtra perfiles por hábitos de limpieza, nivel de ruido, presupuesto y coincidencia estudiantil.</p>
+                        </div>
+                        <a href="simulador.html" class="btn btn-primary">Probar Algoritmo <i class="fa-solid fa-play"></i></a>
+                    </div>
+
+                    <!-- Card 3: Contacto -->
+                    <div class="card-glass text-center" style="padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div class="info-icon" style="margin: 0 auto 20px auto; width: 60px; height: 60px; font-size: 1.6rem; background: rgba(198, 139, 89, 0.1); color: var(--color-secondary);"><i class="fa-solid fa-user-group"></i></div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 12px;">Pre-registro Piloto</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Forma parte del piloto de Roomies en Comayagua. Regístrate de forma gratuita como estudiante, padre de familia o propietario.</p>
+                        </div>
+                        <a href="contacto.html" class="btn btn-secondary">Registrarse <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Banner -->
+        <section class="section-padding" style="position: relative;">
+            <div class="container text-center">
+                <div class="card-glass" style="max-width: 800px; margin: 0 auto; padding: 60px 40px;">
+                    <span class="badge-accent"><i class="fa-solid fa-flag"></i> Piloto Lanzamiento</span>
+                    <h2 style="font-family: var(--font-heading); font-size: 2.3rem; font-weight: 700; margin-bottom: 16px;">¿Listo para encontrar tu roomie ideal?</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">Regístrate hoy en la fase piloto de ROOMIES en Comayagua. Forma parte de la comunidad que está transformando la vida estudiantil.</p>
+                    <a href="contacto.html" class="btn btn-primary btn-lg">Regístrate Gratis Ahora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-people-roof"></i></span>
+                    <span class="logo-text">ROOM<span class="highlight">IES</span></span>
+                </a>
+                <p>Plataforma para la conexión segura y afinidad de convivencia entre estudiantes universitarios.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div>
+                    <h5>Navegación</h5>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="beneficios.html">Beneficios</a></li>
+                        <li><a href="simulador.html">Simulador</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Operaciones</h5>
+                    <ul>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Privacidad de Datos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 ROOMIES. Todos los derechos reservados. Desarrollado por Ruth Fernández & Ana Hernández.</p>
+                <div class="aecid-badge">
+                    <i class="fa-solid fa-handshake-angle"></i> Elaborado como parte del Proyecto de Emprendimiento <strong>EMPRENDE CITE</strong> (Comayagua), financiado por la <strong>Agencia Española de Cooperación Internacional para el Desarrollo (AECID)</strong>.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script file -->
+    <script src="app.js"></script>
+</body>
+</html>
